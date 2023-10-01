@@ -1,0 +1,35 @@
+.header {
+  font-size: 32px;
+  color: #000;
+  background-color: #dcdedf;
+}
+
+.header a {
+  display: flex;
+}
+
+span {
+  display: inline-flex;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  max-width: 1240px;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 10px 15px;
+}
+
+.logo {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  font-size: 50px;
+}
+
+.nav {
+  display: flex;
+  column-gap: 40px;
+}
