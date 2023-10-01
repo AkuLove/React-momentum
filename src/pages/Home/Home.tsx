@@ -1,9 +1,9 @@
-// import style from './Home.module.scss';
+import style from './Home.module.scss';
 
 function Home() {
   return (
     <section>
-      <div />
+      <div className={style.homeBody} />
     </section>
   );
 }
