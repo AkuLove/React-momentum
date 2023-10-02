@@ -1,17 +1,13 @@
-// import { combineReducers, configureStore } from '@reduxjs/toolkit';
-// import { catalogApi } from '../services/catalogApi';
-// import { friendsApi } from '../services/friendsApi';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import dayReducer from './daySlice';
 
-// const reducers = combineReducers({
-//   [catalogApi.reducerPath]: catalogApi.reducer,
-//   [friendsApi.reducerPath]: friendsApi.reducer,
-// });
+const reducers = combineReducers({
+  currentDay: dayReducer,
+});
 
-// export const store = configureStore({
-//   reducer: reducers,
-//   middleware: (getDefaultMiddleware) =>
-//     getDefaultMiddleware().concat(catalogApi.middleware, friendsApi.middleware),
-// });
+export const store = configureStore({
+  reducer: reducers,
+});
 
-// export type RootState = ReturnType<typeof store.getState>;
-// export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
