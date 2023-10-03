@@ -8,6 +8,7 @@ import style from './Home.module.scss';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
 import useLocalStorage from '../../hooks/useLocalStorage';
+import Todo from '../../components/Todo/Todo';
 
 function Home() {
   const dispatch = useAppDispatch();
@@ -45,6 +46,9 @@ function Home() {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
+        </div>
+        <div>
+          <Todo />
         </div>
       </div>
     </section>
