@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { TodoState } from '../types/interfaces/Todo/ITodoState';
+import { ITodo } from '../types/interfaces/Todo/ITodo';
 
 const initialState: TodoState = {
   list: [],
@@ -25,9 +26,13 @@ const todoSlice = createSlice({
         toggledTodo.completed = !toggledTodo?.completed;
       }
     },
+    updateOrder(state, action: PayloadAction<ITodo[]>) {
+      state.list = action.payload;
+    },
   },
 });
 
-export const { addTodo, removeTodo, toggleTodoComplete } = todoSlice.actions;
+export const { addTodo, removeTodo, toggleTodoComplete, updateOrder } =
+  todoSlice.actions;
 
 export default todoSlice.reducer;

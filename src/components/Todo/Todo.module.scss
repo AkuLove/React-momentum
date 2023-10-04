@@ -1,0 +1,51 @@
+.body {
+  display: inline-block;
+  background-color: rgba(#000000, 0.2);
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.form {
+  padding: 5px;
+  display: flex;
+  column-gap: 5px;
+
+  .input {
+    background-color: #fff;
+    padding: 5px;
+    width: 350px;
+    border-radius: 4px;
+  }
+
+  .addTodo {
+    padding: 5px 10px;
+    background-color: #fff;
+    border-radius: 4px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 5px;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: grab;
+
+  .itemText {
+    flex: 1 1 auto;
+  }
+}
+
+.item:active {
+  cursor: grabbing;
+}
