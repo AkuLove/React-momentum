@@ -1,6 +1,7 @@
 import { ITodoForm } from '../../types/interfaces/Todo/ITodoForm';
 
 import style from './Todo.module.scss';
+import TodoFilter from './TodoFilter';
 
 function TodoInput({ todoText, handleInput, handleSubmit }: ITodoForm) {
   return (
@@ -14,6 +15,7 @@ function TodoInput({ todoText, handleInput, handleSubmit }: ITodoForm) {
       <button className={style.addTodo} onClick={handleSubmit} type="button">
         Add Todo
       </button>
+      <TodoFilter />
     </form>
   );
 }

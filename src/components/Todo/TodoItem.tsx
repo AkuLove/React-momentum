@@ -1,21 +1,30 @@
 import { Reorder } from 'framer-motion';
+import { ITodoItem } from '../../types/interfaces/Todo/ITodoItem';
 import { useAppDispatch } from '../../hooks/useAppDispatch';
 import {
   removeTodo,
   toggleTodoComplete,
   updateOrder,
 } from '../../store/todoSlice';
-import { ITodo } from '../../types/interfaces/Todo/ITodo';
 
 import style from './Todo.module.scss';
 
-function TodoItem({
-  todo,
-  reorderTodos,
-}: {
-  todo: ITodo;
-  reorderTodos: ITodo[];
-}) {
+const variants = {
+  initial: {
+    opacity: 0,
+    scale: 0,
+  },
+  animate: {
+    opacity: 1,
+    scale: 1,
+  },
+  exit: {
+    opacity: 0,
+    scale: 0,
+  },
+};
+
+function TodoItem({ todo, reorderTodos }: ITodoItem) {
   const { id, completed, todoText } = todo;
 
   const dispatch = useAppDispatch();
@@ -25,6 +34,8 @@ function TodoItem({
       value={todo}
       className={style.item}
       onDragEnd={() => dispatch(updateOrder(reorderTodos))}
+      {...variants}
+      transition={{ duration: 0.4, type: 'spring' }}
     >
       <span className={style.itemText}>{todoText}</span>
       <input

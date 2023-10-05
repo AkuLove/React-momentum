@@ -1,4 +1,4 @@
-import { Reorder } from 'framer-motion';
+import { Reorder, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '../../hooks/useAppSelector';
 import TodoItem from './TodoItem';
@@ -14,16 +14,18 @@ function TodoList() {
   }, [todos]);
 
   return (
-    <Reorder.Group
-      axis="y"
-      values={todos}
-      onReorder={setReorderTodos}
-      className={style.list}
-    >
-      {reorderTodos.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} reorderTodos={reorderTodos} />
-      ))}
-    </Reorder.Group>
+    <AnimatePresence initial={false} mode="wait">
+      <Reorder.Group
+        axis="y"
+        values={todos}
+        onReorder={setReorderTodos}
+        className={style.list}
+      >
+        {reorderTodos.map((todo) => (
+          <TodoItem key={todo.id} todo={todo} reorderTodos={reorderTodos} />
+        ))}
+      </Reorder.Group>
+    </AnimatePresence>
   );
 }
 

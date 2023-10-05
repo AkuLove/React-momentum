@@ -32,6 +32,7 @@ module.exports = {
     ],
     "no-param-reassign": "off",
     "react-hooks/exhaustive-deps": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "react/jsx-props-no-spreading": "off"
   },
 }
