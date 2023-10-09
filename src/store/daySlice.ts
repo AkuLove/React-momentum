@@ -1,18 +1,15 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const daySlice = createSlice({
   name: 'day',
   initialState: {
-    currentHours: new Date().getHours(),
-    numberOfCurrentDay: new Date().getDay(),
-    numberOfCurrentMonth: new Date().getMonth(),
     stringDayNumber: '',
     stringMonthNumber: '',
     greetingMessage: '',
   },
   reducers: {
-    getStringDayNumber(state) {
-      switch (state.numberOfCurrentDay) {
+    getStringDayNumber(state, action: PayloadAction<number>) {
+      switch (action.payload) {
         case 1: {
           state.stringDayNumber = 'Понедельник';
           break;
@@ -45,8 +42,8 @@ const daySlice = createSlice({
           break;
       }
     },
-    getStringMonthNumber(state) {
-      switch (state.numberOfCurrentMonth) {
+    getStringMonthNumber(state, action: PayloadAction<number>) {
+      switch (action.payload) {
         case 0: {
           state.stringMonthNumber = 'Января';
           break;
@@ -99,8 +96,8 @@ const daySlice = createSlice({
           break;
       }
     },
-    getGreetingsMessage(state) {
-      const hours = state.currentHours;
+    getGreetingsMessage(state, action: PayloadAction<number>) {
+      const hours = action.payload;
       switch (true) {
         case hours >= 6 && hours <= 11: {
           state.greetingMessage = 'Доброе утро';

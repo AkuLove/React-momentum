@@ -17,13 +17,15 @@ function Todo() {
   };
 
   return (
-    <div className={style.body}>
-      <TodoInput
-        todoText={todoText}
-        handleInput={setTodoText}
-        handleSubmit={addTask}
-      />
-      <TodoList />
+    <div className={style.todo}>
+      <div className={style.body}>
+        <TodoInput
+          todoText={todoText}
+          handleInput={setTodoText}
+          handleSubmit={addTask}
+        />
+        <TodoList />
+      </div>
     </div>
   );
 }

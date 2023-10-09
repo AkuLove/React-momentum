@@ -1,0 +1,11 @@
+.homeBody {
+  min-height: calc(85vh - 59px - 84px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  @media (max-width: 450px) {
+    justify-content: flex-start;
+  }
+}

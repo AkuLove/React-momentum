@@ -1,8 +1,27 @@
+.todo {
+  position: absolute;
+  bottom: 99px;
+  right: 15px;
+  @media (max-width: 450px) {
+    width: 100%;
+    right: 0px;
+    padding: 0 15px;
+  }
+}
+
 .body {
   display: inline-block;
+  font-size: 16px;
   background-color: rgba(#000000, 0.2);
   border-radius: 8px;
   padding: 5px;
+  white-space: nowrap;
+  @media (max-width: 450px) {
+    width: 100%;
+  }
+  @media (min-width: 320px) and (max-width: 1920px) {
+    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+  }
 }
 
 .form {
@@ -12,7 +31,7 @@
   .input {
     background-color: #fff;
     padding: 5px;
-    width: 300px;
+    width: 100%;
     border-radius: 4px;
   }
 
@@ -20,6 +39,14 @@
     padding: 5px 10px;
     background-color: #fff;
     border-radius: 4px;
+  }
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+    row-gap: 10px;
+    border-bottom: solid rgba(#000000, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 5px;
   }
 }
 

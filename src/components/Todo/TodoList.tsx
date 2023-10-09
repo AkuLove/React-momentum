@@ -14,7 +14,7 @@ function TodoList() {
   }, [todos]);
 
   return (
-    <AnimatePresence initial={false} mode="wait">
+    <AnimatePresence initial={false}>
       <Reorder.Group
         axis="y"
         values={todos}

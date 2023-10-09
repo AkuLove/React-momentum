@@ -12,6 +12,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import dayReducer from './daySlice';
 import todoReducer from './todoSlice';
+import settingsReducer from './settingsSlice';
 
 const persistConfig = {
   key: 'root',
@@ -21,6 +22,7 @@ const persistConfig = {
 const reducers = combineReducers({
   currentDay: dayReducer,
   todos: todoReducer,
+  settings: settingsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);

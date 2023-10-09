@@ -35,7 +35,7 @@ function TodoItem({ todo, reorderTodos }: ITodoItem) {
       className={style.item}
       onDragEnd={() => dispatch(updateOrder(reorderTodos))}
       {...variants}
-      transition={{ duration: 0.4, type: 'spring' }}
+      transition={{ duration: 0.6, type: 'spring' }}
     >
       <span className={style.itemText}>{todoText}</span>
       <input
