@@ -12,7 +12,6 @@ footer {
 }
 
 .footerBody {
-  @include adaptiveValue('font-size', 16, 40, 0);
   flex: 1 1 auto;
 }
 
