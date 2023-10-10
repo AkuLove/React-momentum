@@ -1,12 +1,13 @@
 import { AiFillGithub } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import style from './Footer.module.scss';
+import Quotes from '../Quotes/Quotes';
 
 function Footer() {
   return (
     <footer>
       <div className={style.container}>
-        <div className={style.footerBody}>Footer</div>
+        <Quotes />
         <div className={style.media}>
           <Link to="https://github.com/AkuLove" className={style.logo}>
             <AiFillGithub />

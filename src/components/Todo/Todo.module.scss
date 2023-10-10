@@ -2,10 +2,12 @@
   position: absolute;
   bottom: 99px;
   right: 15px;
+
   @media (max-width: 450px) {
     width: 100%;
     right: 0px;
     padding: 0 15px;
+    bottom: 130px;
   }
 }
 
