@@ -1,0 +1,43 @@
+.weather{
+    position: absolute;
+    right: 15px;
+    top:15px;
+    max-width: 300px;
+    width:100%;
+    display: grid;
+    grid-template-areas:
+        "city city city"
+        "ico ico temp"
+        "desc desc desc"
+        "wind wind wind"
+        ".... hum hum";
+    row-gap: 5px;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    text-align: right;
+    font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
+
+.city{
+    grid-area: city;
+    border-bottom: 2px solid #000000;
+    text-align: right;
+    
+}
+.icon{
+    grid-area: ico;
+}
+.temp{
+    grid-area: temp;
+    font-size: calc(30px + (50 - 30) * ((100vw - 320px) / (1920 - 320)));
+}
+.desc{
+    grid-area: desc;
+}
+.wind{
+    grid-area: wind;
+}
+.humidity{
+    grid-area: hum;
+}
+}

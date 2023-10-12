@@ -3,6 +3,7 @@
 // Обнуление стилей и подключение миксинов
 @import 'styles/null';
 @import 'styles/mixins';
+@import 'styles/owfont-regular.css.scss';
 
 .container {
   max-width: 1240px;
